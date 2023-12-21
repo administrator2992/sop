@@ -1,0 +1,178 @@
+\documentclass[12pt,letterpaper]{report}
+
+\usepackage[T1]{fontenc} % output T1 font encoding (8-bit) for accented characters as single glyph
+\usepackage[strict,autostyle]{csquotes} % smart and nestable quote marks
+\usepackage[USenglish]{babel} % regionalize hyphens, quote marks, etc automatically
+\usepackage{microtype}% improve text appearance with kerning, etc
+\usepackage{datetime} % enable formatting of date output
+\usepackage{tabto}    % make nice tabbing
+\usepackage{hyperref} % enable hyperlinks and pdf metadata
+\usepackage{geometry} % manually set page margins
+\usepackage{enumitem} % enumerate with [resume] option
+\usepackage{titlesec} % allow custom section fonts
+\usepackage{setspace} % custom line spacing
+\usepackage[maxcitenames=6, minnames=3 ]{biblatex}
+\addbibresource[]{biblio.bib}
+
+% what is your name?
+\newcommand{\myname}{Ahmad Naufal Labiib Nabhaan}
+
+% select default typefaces
+\usepackage{ebgaramond} % document's serif typeface
+\usepackage{tgheros}    % document's sans serif typeface
+
+% how far to tab for list items with left-aligned date: different fonts need different widths
+\newcommand{\listtabwidth}{1.7cm}
+
+% define font to use as document's title
+\newcommand{\namefont}[1]{{\normalfont\bfseries\Huge{#1}}}
+
+% set section heading fonts and before/after spacing
+\SetTracking{encoding=*, family=\sfdefault}{30} % increase sans serif headings tracking
+\titleformat{\section}{\lsstyle\sffamily\small\bfseries\uppercase}{}{}{}{}
+\titlespacing{\section}{0pt}{30pt plus 4pt minus 4pt}{8pt plus 2pt minus 2pt}
+
+% set subsection heading fonts and before/after spacing
+\titleformat{\subsection}{\lsstyle\sffamily\footnotesize\bfseries}{}{}{}{}
+\titlespacing{\subsection}{0pt}{16pt plus 4pt minus 4pt}{4pt plus 2pt minus 2pt}
+
+% set page margins (assumes letter paper)
+\geometry{body={6.5in, 9.0in},
+    left=1.0in,
+    top=1.0in}
+
+% prevent paragraph indentation
+\setlength\parindent{0em}
+
+% set line spacing
+\setstretch{1.0}
+
+% define space between list items
+\newcommand{\listitemspace}{0.25em}
+
+% make unordered lists without bullets and use compact spacing
+\renewenvironment{itemize}
+{\begin{list}{}{\setlength{\leftmargin}{0em}
+                \setlength{\parskip}{0em}
+                \setlength{\itemsep}{\listitemspace}
+                \setlength{\parsep}{\listitemspace}}}
+{\end{list}}
+
+% print only the month and year when using \today
+\newdateformat{monthyeardate}{\monthname[\THEMONTH] \THEYEAR}
+
+% define hyperlink appearance and metadata for pdf properties
+\hypersetup{
+    colorlinks  = true,
+    urlcolor    = black,
+    citecolor   = black,
+    linkcolor   = black,
+    pdfauthor   = {\myname},
+    pdfkeywords = {Edge Computing, Deep Learning, Machine Learning, Internet of Things},
+    pdftitle    = {\myname: Curriculum Vitae},
+    pdfsubject  = {Curriculum Vitae},
+    pdfpagemode = UseNone
+}
+
+\begin{document}
+    % \nobibliography*
+    \raggedright{}
+
+    % display your name as the document title
+    \namefont{\myname}
+
+    % affiliation and contact info blocks
+    \vspace{1em}
+    \begin{minipage}[t]{0.700\textwidth}
+        % current primary affiliation, left-aligned
+        Department of Computer Engineering (CE)\\
+        University of AMIKOM Yogyakarta
+    \end{minipage}
+    \begin{minipage}[t]{0.295\textwidth}
+        % contact info details, right-aligned
+        \flushright{}
+        \href{mailto:nabhaan.ahmad.ln@gmail.com}{nabhaan.ahmad.ln@gmail.com} \\
+        +62 853 1498 8120 \\
+        \href{https://administrator2992.github.io}{administrator2992.github.io}
+    \end{minipage}
+
+    \section*{Education}
+
+    \begin{tabular}{@{}p{0.2\textwidth}p{0.8\textwidth}}
+        S.Kom (B.Cs.) & Computer Engineering, University of AMIKOM Yogyakarta, Indonesia, 2019-Present \\
+    \end{tabular}
+    
+    \section*{Research Areas}
+    \begin{itemize}
+      \item Characterizing Deep Learning Performance: analysis deep learning performance on edge devices with memory limitation scenario
+      \item Predicting Deep Learning Performance: reaching wise decision for the deep learning application on edge devices
+    \end{itemize}
+    
+    % \section*{Publications}
+    % \subsection*{Journal Articles}
+    % \begin{tabular}{@{}p{0.2\textwidth}p{0.8\textwidth}}
+    %     - & fullcite{-}
+    % \end{tabular}
+
+    % \subsection*{Conference Proceedings}
+    % \begin{tabular}{@{}p{0.2\textwidth}p{0.8\textwidth}}
+    %     - & fullcite{-}
+    % \end{tabular}
+
+    % \section*{INVITED TALKS}
+    % \subsection*{Campus Talks}
+
+    % \section*{Conference Activity}
+    % \begin{tabular}{@{}p{0.2\textwidth}p{0.8\textwidth}}
+    %     - & -
+    % \end{tabular}
+
+    % \section*{Awards}
+    % \subsection*{Awards and Honors}
+    % \begin{tabular}{@{}p{0.2\textwidth}p{0.8\textwidth}}
+    %     - & -
+    % \end{tabular}
+
+    % \section*{Teaching}
+    % \begin{tabular}{@{}p{0.2\textwidth}p{0.8\textwidth}}
+    %     - & -
+    % \end{tabular}
+
+    % \section*{Service}
+    % \subsection*{Academic Journal and Conference Peer Review}
+    % \begin{itemize}
+    %     \item -
+    % \end{itemize}
+
+    \section*{Research Labs and Assistantship}
+    \setstretch{1.5}
+    \begin{tabular}{@{}p{0.2\textwidth}p{0.8\textwidth}}
+        2022-Now & Research Assistant at Research Collaboration with University of Georgia, AMIKOM \\
+        2022-2023 & Research Assistant for New Normal Adaptation Monitoring Research, AMIKOM \\
+        2022 Aug-Des & Lab Assistant at Artificial Intelligence, AMIKOM \\
+        2022 Feb-Jun & Lab Assistant at Computer Networking 1, AMIKOM \\
+        2022 Feb-Jun & Lab Assistant at Database, AMIKOM \\
+        2021-2022 & Lab Assistant at Operating System, AMIKOM \\
+    \end{tabular}
+    \setstretch{1.0}
+    % \section*{Certificates}
+    % \begin{tabular}{@{}p{0.2\textwidth}p{0.8\textwidth}}
+    %     - & -
+    % \end{tabular}
+
+    % \section*{Professional Employment}
+    % \begin{tabular}{@{}p{0.2\textwidth}p{0.8\textwidth}}
+    %     - & -
+    % \end{tabular}
+
+    \section*{Experiences}
+    \begin{tabular}{@{}p{0.2\textwidth}p{0.8\textwidth}}
+        2021 Oct-Dec & Industrial IoT Course, Student Exchange at Institut Teknologi Bandung
+    \end{tabular}
+
+    \section*{Skills}
+    \begin{tabular}{@{}p{0.2\textwidth}p{0.8\textwidth}}
+        Programming & Python, C++ Arduino, JS, \LaTeX \\
+    \end{tabular}
+
+\end{document}
